@@ -1,40 +1,40 @@
-/*
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-    int i=0;
-    cout << "Hello world sth else!" << endl <<i;
-    return 0;
-}
-*/
+#include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include <cmath>
+#include <iostream>
+#include "TMP.h"
+#include "Character.h"
+#include "Avatar.h"
+
+
+
+
 
 int main()
 {
-    sf::RenderWindow okno( sf::VideoMode( 320, 240 ), "Kurs SFML 2.0 - http://cpp0x.pl" );
-    sf::Clock stoper;
-    while( okno.isOpen() )
+    if ( 's' )
+        std::cout << " Przeszlo";
+    sf::RenderWindow applicationWindow( sf::VideoMode( 800, 600, 32 ), "Kurs SFML 2.0 - http://cpp0x.pl" );
+    applicationWindow.setFramerateLimit(60);
+    sf::Event zdarzenie;
+    Avatar avatar1;
+    avatar1.Move();
+    while( applicationWindow.isOpen() )
     {
-        sf::Event event;
-        while( okno.pollEvent( event ) )
+        avatar1.Move();
+        while( applicationWindow.pollEvent( zdarzenie ) )
         {
-            if( event.type == sf::Event::Closed )
-                 okno.close();
+            if( zdarzenie.type == sf::Event::Closed )
+                 applicationWindow.close();
+            if( zdarzenie.type == sf::Event::KeyPressed && zdarzenie.key.code == sf::Keyboard::Escape )
+                 applicationWindow.close();
+        }
+        applicationWindow.clear( sf::Color::Black );
+        avatar1.Draw(applicationWindow);
 
-        } //while
-        okno.clear();
 
-        sf::CircleShape ksztalt( std::sin( stoper.getElapsedTime().asSeconds() ) * okno.getSize().y / 8 + okno.getSize().y / 4 );
-        ksztalt.setOrigin( sf::Vector2f( ksztalt.getRadius(), ksztalt.getRadius() ) );
-        ksztalt.setPosition( okno.getSize().x / 2.0f, okno.getSize().y / 2.0f );
-        ksztalt.setFillColor( sf::Color::Yellow );
-        okno.draw( ksztalt );
+        applicationWindow.display();
+    }
 
-        okno.display();
-    } //while
+    //TMP_func();
     return 0;
 }
