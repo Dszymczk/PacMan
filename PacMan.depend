@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1585857354 source:d:\programowanie\cpp\pacman\main.cpp
+1586034187 source:d:\programowanie\cpp\pacman\main.cpp
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<iostream>
 	"TMP.h"
 	"Character.h"
 	"Avatar.h"
+	"EventHandler.h"
 
 1525815618 d:\programowanie\cpp\pacman\sfml-2.5.1\include\sfml\window.hpp
 	<SFML/System.hpp>
@@ -416,28 +417,36 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1585770712 source:d:\programowanie\cpp\pacman\src\character.cpp
+1586021187 source:d:\programowanie\cpp\pacman\src\character.cpp
 	"Character.h"
 
-1585770229 d:\programowanie\cpp\pacman\include\character.h
+1586021187 d:\programowanie\cpp\pacman\include\character.h
 	<vector>
 
-1585766762 source:d:\programowanie\cpp\pacman\tmp.cpp
+1586021512 source:d:\programowanie\cpp\pacman\tmp.cpp
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<iostream>
 
 1585767777 d:\programowanie\cpp\pacman\tmp.h
 
-1585857773 source:d:\programowanie\cpp\pacman\src\avatar.cpp
+1586034962 source:d:\programowanie\cpp\pacman\src\avatar.cpp
 	"Avatar.h"
-	<SFML/Window.hpp>
-	<SFML/Graphics.hpp>
-	<iostream>
 
-1585857619 d:\programowanie\cpp\pacman\include\avatar.h
+1586021187 d:\programowanie\cpp\pacman\include\avatar.h
 	<vector>
 	"Character.h"
 	<string>
 	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<iostream>
+
+1586033820 source:d:\programowanie\cpp\pacman\src\eventhandler.cpp
+	"EventHandler.h"
+
+1586033795 d:\programowanie\cpp\pacman\include\eventhandler.h
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+	<iostream>
+	<Avatar.h>
 

@@ -18,8 +18,8 @@ void TMP_func()
         tekstura.loadFromFile( "Circle.png" );
         sf::Event zdarzenie;
 
-        sf::Sprite obrazek; //INFO: dopisane w tym rozdziale
-        obrazek.setTexture( tekstura ); //INFO: dopisane w tym rozdziale
+        sf::Sprite obrazek;
+        obrazek.setTexture( tekstura );
         obrazek.setPosition(pozycja);
 
         while( oknoAplikacji.pollEvent( zdarzenie ) )

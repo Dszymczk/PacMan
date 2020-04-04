@@ -1,18 +1,19 @@
 #include "Avatar.h"
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <iostream>
+//Below directives are already used in headers file
+//#include <SFML/Window.hpp>
+//#include <SFML/Graphics.hpp>
+//#include <iostream>
 
 Avatar::Avatar()
 {
     Avatar::direction = 'e';
-    Avatar::velocity = 5;
+    Avatar::velocity = 1;
     if (!Avatar::texture.loadFromFile("Circle.png"))
         std::cout<<"Cannot load file \"" <<"jakis plik" <<"to Avatar";
         // Trzeba wstawic do klasy zmienna string z nazwa pliku do wczytania
     sf::Sprite sprite;
     Avatar::sprite.setTexture(texture);
-    Avatar::Set_position(1, 1);
+    Avatar::SetPosition(1, 1);
     std::cout<<"Avatar object constructed";
 }
 
@@ -29,13 +30,13 @@ void Avatar::Colision()
 }
 
 // Metoda obsluguj¹ca natrafienie na obiekt klasy Object - punkt lub powerup
-void Avatar::object_colision()
+void Avatar::ObjectColision()
 {
 
 }
 
 // Metoda obs³uguj¹ca natrafienie na punkt
-void Avatar::Score(int points_number)
+void Avatar::Score(int pointsNumber)
 {
 
 }
@@ -52,22 +53,26 @@ void Avatar::Move()
     float x = Avatar::position.x;
     float y = Avatar::position.y;
     // If avatar exceeds window change direction to oposite
-    if( Avatar::Avatar_position_exceeds_window())
+    if( Avatar::AvatarPositionExceedsWindow())
     {
         std::cout<<"Avatar position exceeds window range!\n";
         switch(Avatar::direction)
         {
         case 'n':
-            Avatar::direction = 's';
+            //Avatar::direction = 's';
+            this->ChangeDirection('s');
             break;
         case 's':
-            Avatar::direction = 'n';
+            //Avatar::direction = 'n';
+            this->ChangeDirection('n');
             break;
         case 'w':
-            Avatar::direction = 'e';
+            //Avatar::direction = 'e';
+            this->ChangeDirection('e');
             break;
         case 'e':
-            Avatar::direction = 'w';
+            //Avatar::direction = 'w';
+            this->ChangeDirection('w');
             break;
         }
     }
@@ -86,16 +91,16 @@ void Avatar::Move()
         x += Avatar::velocity;
         break;
     }
-    this ->Set_position(x, y);
+    this ->SetPosition(x, y);
 
 }
 
-bool Avatar::Avatar_position_exceeds_window()
+bool Avatar::AvatarPositionExceedsWindow()
 {
     float x = Avatar::position.x;
     float y = Avatar::position.y;
-    if( x <= 0 || x >= Avatar::window_width
-       || y <= 0 || y >= Avatar::window_height)
+    if( x <= 0 || x >= Avatar::WindowWidth
+       || y <= 0 || y >= Avatar::windowHeight)
        {
            //std::cout<<"x: " <<x << "y: " <<y <<std::endl;
         return 1;
@@ -105,36 +110,38 @@ bool Avatar::Avatar_position_exceeds_window()
 }
 
 // Metoda obs³uguj¹ca zmianê kierunku ruchu
-void Avatar::Change_direction(char new_direction)
+void Avatar::ChangeDirection(char new_direction)
 {
     if( new_direction == 's'
        || new_direction == 'n'
        || new_direction == 'e'
        || new_direction == 'w')
+       std::cout<<"Old direction"<<Avatar::direction<<std::endl;
         Avatar::direction = new_direction;
+        std::cout<<"Old direction"<<Avatar::direction<<std::endl;
 }
 
-void Avatar::Ghost_colision()
+void Avatar::GhostColision()
 {
 
 }
 
-void Avatar::Avatar_colision()
+void Avatar::AvatarColision()
 {
 
 }
 
-void Avatar::Detect_intersection()
+void Avatar::DetectIntersection()
 {
 
 }
 
-sf::Vector2f Avatar::Get_position()
+sf::Vector2f Avatar::GetPosition()
 {
 
 }
 
-void Avatar::Set_position(float x, float y)
+void Avatar::SetPosition(float x, float y)
 {
     Avatar::position.x = x;
     Avatar::position.y = y;

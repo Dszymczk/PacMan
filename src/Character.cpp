@@ -16,13 +16,13 @@ void Character::Move()
     //
 }
 
-void Character::Detect_colision()
+void Character::DetectColision()
 {
 
 }
 
 
-void Character::Detect_intersection()
+void Character::DetectIntersection()
 {
 
 }
