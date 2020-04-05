@@ -11,7 +11,7 @@ class Character
 
     public:
  	// Tablica przechowujaca wszystkie obiekty dziezicz¹ce po klasie character
-    static std::vector <Character> charactersTab;;
+    static std::vector <Character> charactersTab;
     // Konstruktor
     Character();
     // Destruktor

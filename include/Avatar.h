@@ -6,6 +6,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <iostream>
+#include <Intersections.h>
+#include <Intersection.h>
 
 
 class Avatar : public Character
@@ -20,8 +22,11 @@ class Avatar : public Character
 	int pointsNumber;
 	// Zmienna przechowuj¹ca informacjê o kierunku poruszania siê obiektu
 	char direction;
+	// Parameter storing information about next direction
+	char directionBuffer;
 	// Zmienna przechowuj¹ca informacjê o prêdkoœci obiektu
 	int velocity;
+	bool stopped;
 	// Zmienna przechowujaca informacje o pozycji na planszy
 	sf::Vector2f position;
 	// Obiekt przechowujacy teksture
@@ -49,14 +54,23 @@ class Avatar : public Character
 	//
 	// returns 0 if avatar position is correct and return 1 if avatar position is outside window
 	bool AvatarPositionExceedsWindow();
+
 	// Metoda obs³uguj¹ca zmianê kierunku ruchu
 	void ChangeDirection(char new_direction);
+
+	//
+	void ChangeDirectionBuffer(char new_direction);
+
 	// Metoda obslugujaca spotkanie z duchem - przegrana gracza, lub zdobycie dodatkowych punktów, zale¿nie od stanu
 	void GhostColision();
+
 	// Metoda obs³uguj¹ca spotkanie z innym graczem - zmiana kierunku ruchu
 	void AvatarColision();
-	// Metoda wykrywaj¹ca skrzy¿owania
-	void DetectIntersection();
+
+	// Method that detects if avatar comes across intersection and returns its number in tab
+	// If interectin wasnt detected then returns -1
+	int DetectIntersection(Intersections Tab);
+
 	// Metoda zwracajaca pozycje
 	sf::Vector2f GetPosition();
 
@@ -68,6 +82,14 @@ class Avatar : public Character
 	void SetPosition(float x, float y);
 	// Draw avatar in sf::Window window
 	void Draw(sf::RenderWindow &appWindow);
+	// Returns directionBuffer
+	char GetDirectionBuffer();
+	// Returns direction
+	char GetDirection();
+	//Reset directionBuffer
+	void ResetDirectionBuffer();
+	// Stops avatar
+	void Stop();
 
 
 };

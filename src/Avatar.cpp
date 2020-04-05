@@ -8,6 +8,8 @@ Avatar::Avatar()
 {
     Avatar::direction = 'e';
     Avatar::velocity = 1;
+    Avatar::stopped = 0;
+    Avatar::directionBuffer == false;
     if (!Avatar::texture.loadFromFile("Circle.png"))
         std::cout<<"Cannot load file \"" <<"jakis plik" <<"to Avatar";
         // Trzeba wstawic do klasy zmienna string z nazwa pliku do wczytania
@@ -50,6 +52,8 @@ void Avatar::Powerup()
 // Metoda odpowiadaj¹ca za ruch jednostek
 void Avatar::Move()
 {
+    if( Avatar::stopped )
+        return;
     float x = Avatar::position.x;
     float y = Avatar::position.y;
     // If avatar exceeds window change direction to oposite
@@ -116,9 +120,20 @@ void Avatar::ChangeDirection(char new_direction)
        || new_direction == 'n'
        || new_direction == 'e'
        || new_direction == 'w')
-       std::cout<<"Old direction"<<Avatar::direction<<std::endl;
         Avatar::direction = new_direction;
-        std::cout<<"Old direction"<<Avatar::direction<<std::endl;
+}
+
+void Avatar::ChangeDirectionBuffer(char new_direction)
+{
+    if( new_direction == 's'
+       || new_direction == 'n'
+       || new_direction == 'e'
+       || new_direction == 'w')
+       {
+           Avatar::stopped = 0;
+           Avatar::directionBuffer = new_direction;
+
+       }
 }
 
 void Avatar::GhostColision()
@@ -131,14 +146,28 @@ void Avatar::AvatarColision()
 
 }
 
-void Avatar::DetectIntersection()
+int Avatar::DetectIntersection(Intersections intersects)
 {
-
+    int length = intersects.GetTabSize();
+    sf::Vector2f avatarPosition = this->GetPosition();
+    sf::Vector2f intersectionPosition;
+    for(int i = 0; i < length; i++)
+    {
+        std::vector <Intersection> tablica;
+        tablica = intersects.tab;
+        intersectionPosition = intersects.tab[i].GetPosition();
+        if(intersectionPosition == avatarPosition)
+        {
+            std::cout <<"Intersection detected"<<std::endl;
+            return i;
+        }
+    }
+    return -1;
 }
 
 sf::Vector2f Avatar::GetPosition()
 {
-
+    return Avatar::position;
 }
 
 void Avatar::SetPosition(float x, float y)
@@ -152,3 +181,24 @@ void Avatar::Draw(sf::RenderWindow &appWindow)
 {
     appWindow.draw(Avatar::sprite);
 }
+
+char Avatar::GetDirectionBuffer()
+{
+    return Avatar::directionBuffer;
+}
+
+char Avatar::GetDirection()
+{
+    return Avatar::direction;
+}
+
+void Avatar::ResetDirectionBuffer()
+{
+    Avatar::directionBuffer = false;
+}
+
+void Avatar::Stop()
+{
+    Avatar::stopped = 1;
+}
+

@@ -43,15 +43,14 @@ class EventHandler
         //False - There is not
         bool IfCloseWindow();
 
-        // Returns information if Avatar should move
+        // Returns information if Avatar should change directionBuffer. If avatar should move return information about direction
         //
         // Output:
-        //True - There is
+        //n, s, e, w - main directions
         //False - There is not
-        char IfMove();
+        char IfChangeDirectionBuffer();
 
-        // Checks which arrow
-        char GetMoveDirection();
+
 };
 
 #endif // EVENTHANDLER_H

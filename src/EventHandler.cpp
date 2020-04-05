@@ -20,9 +20,9 @@ void EventHandler::HandleEvents()
     {
         if( EventHandler::IfCloseWindow() )
             EventHandler::appWindow->close();
-        if( char newDirection = EventHandler::IfMove())
+        if( char newDirection = EventHandler::IfChangeDirectionBuffer())
         {
-            EventHandler::plAvatar->ChangeDirection(newDirection);
+            EventHandler::plAvatar->ChangeDirectionBuffer(newDirection);
         }
     }
 
@@ -40,7 +40,7 @@ bool EventHandler::IfCloseWindow()
     return closeButtonClicked || escPressed;
 }
 
-char EventHandler::IfMove()
+char EventHandler::IfChangeDirectionBuffer()
 {
     bool upArrowPressed =  EventHandler::event.type == sf::Event::KeyPressed && EventHandler::event.key.code == sf::Keyboard::Up;
     bool downArrowPressed =  EventHandler::event.type == sf::Event::KeyPressed && EventHandler::event.key.code == sf::Keyboard::Down;

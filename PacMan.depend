@@ -1,12 +1,14 @@
 # depslib dependency file v1.0
-1586034187 source:d:\programowanie\cpp\pacman\main.cpp
+1586108929 source:d:\programowanie\cpp\pacman\main.cpp
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<iostream>
+	<vector>
 	"TMP.h"
 	"Character.h"
 	"Avatar.h"
 	"EventHandler.h"
+	"Intersections.h"
 
 1525815618 d:\programowanie\cpp\pacman\sfml-2.5.1\include\sfml\window.hpp
 	<SFML/System.hpp>
@@ -420,7 +422,7 @@
 1586021187 source:d:\programowanie\cpp\pacman\src\character.cpp
 	"Character.h"
 
-1586021187 d:\programowanie\cpp\pacman\include\character.h
+1586096823 d:\programowanie\cpp\pacman\include\character.h
 	<vector>
 
 1586021512 source:d:\programowanie\cpp\pacman\tmp.cpp
@@ -430,23 +432,40 @@
 
 1585767777 d:\programowanie\cpp\pacman\tmp.h
 
-1586034962 source:d:\programowanie\cpp\pacman\src\avatar.cpp
+1586109246 source:d:\programowanie\cpp\pacman\src\avatar.cpp
 	"Avatar.h"
 
-1586021187 d:\programowanie\cpp\pacman\include\avatar.h
+1586109246 d:\programowanie\cpp\pacman\include\avatar.h
 	<vector>
 	"Character.h"
 	<string>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<iostream>
+	<Intersections.h>
+	<Intersection.h>
 
-1586033820 source:d:\programowanie\cpp\pacman\src\eventhandler.cpp
+1586106182 source:d:\programowanie\cpp\pacman\src\eventhandler.cpp
 	"EventHandler.h"
 
-1586033795 d:\programowanie\cpp\pacman\include\eventhandler.h
+1586106156 d:\programowanie\cpp\pacman\include\eventhandler.h
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<iostream>
 	<Avatar.h>
+
+1586104387 d:\programowanie\cpp\pacman\include\intersections.h
+	<vector>
+	<iostream>
+	"Intersection.h"
+
+1586107574 d:\programowanie\cpp\pacman\include\intersection.h
+	<SFML/Window.hpp>
+	<SFML/Graphics.hpp>
+
+1586107553 source:d:\programowanie\cpp\pacman\src\intersection.cpp
+	"Intersection.h"
+
+1586104538 source:d:\programowanie\cpp\pacman\src\intersections.cpp
+	"Intersections.h"
 
