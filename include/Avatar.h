@@ -71,6 +71,8 @@ class Avatar : public Character
 	// If interectin wasnt detected then returns -1
 	int DetectIntersection(Intersections Tab);
 
+	void IntersectionAction(Intersections intersectionsTab);
+
 	// Metoda zwracajaca pozycje
 	sf::Vector2f GetPosition();
 

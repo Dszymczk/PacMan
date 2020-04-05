@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1586108929 source:d:\programowanie\cpp\pacman\main.cpp
+1586110784 source:d:\programowanie\cpp\pacman\main.cpp
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<iostream>
@@ -432,10 +432,10 @@
 
 1585767777 d:\programowanie\cpp\pacman\tmp.h
 
-1586109246 source:d:\programowanie\cpp\pacman\src\avatar.cpp
+1586110707 source:d:\programowanie\cpp\pacman\src\avatar.cpp
 	"Avatar.h"
 
-1586109246 d:\programowanie\cpp\pacman\include\avatar.h
+1586110635 d:\programowanie\cpp\pacman\include\avatar.h
 	<vector>
 	"Character.h"
 	<string>

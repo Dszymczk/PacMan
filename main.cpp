@@ -36,6 +36,8 @@ int main()
     while( applicationWindow.isOpen() )
     {
         event.HandleEvents();
+        avatar1.IntersectionAction(intersectionsTab);
+        /*
         if( avatar1.DetectIntersection(intersectionsTab) >= 0)
         {
             // Intersection detected
@@ -58,7 +60,7 @@ int main()
                 avatar1.Stop();
             }
 
-        }
+        }*/
         avatar1.Move();
 
 

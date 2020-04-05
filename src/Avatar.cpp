@@ -165,6 +165,32 @@ int Avatar::DetectIntersection(Intersections intersects)
     return -1;
 }
 
+void Avatar::IntersectionAction(Intersections intersectionsTab)
+{
+    if( this->DetectIntersection(intersectionsTab) >= 0)
+        {
+            // Intersection detected
+            std::cout<<"Intersection Detected. Checking!" <<std::endl;
+            int intersectionId = this->DetectIntersection(intersectionsTab);
+            if( intersectionsTab.tab[intersectionId].CheckDirection(this->GetDirectionBuffer()))
+            {
+                // If bufferDirection is ok then change direction
+                std::cout<<"Change direction"<<std::endl;
+                this->ChangeDirection(this->GetDirectionBuffer());
+                this->ResetDirectionBuffer();
+            }else if ( intersectionsTab.tab[intersectionId].CheckDirection(this->GetDirection()))
+            {
+                // If buffer direction is not ok, but current direction is ok
+                std::cout<<"can go further" <<std::endl;
+
+            }else
+            {
+                std::cout<<"stop avatar"<<std::endl;
+                this->Stop();
+            }
+        }
+}
+
 sf::Vector2f Avatar::GetPosition()
 {
     return Avatar::position;
