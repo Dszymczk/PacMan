@@ -25,6 +25,8 @@ class Intersections
 
         // Method that draws all intersections for Tab
         void DrawAllIntersections(sf::RenderWindow &appWindow);
+
+        void Map1();
     protected:
 
     private:

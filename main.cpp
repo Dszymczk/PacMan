@@ -12,7 +12,7 @@
 int main()
 {
     // Setting application windwo
-    sf::RenderWindow applicationWindow( sf::VideoMode( 800, 600, 32 ), "Kurs SFML 2.0 - http://cpp0x.pl" );
+    sf::RenderWindow applicationWindow( sf::VideoMode( 800, 800, 32 ), "Kurs SFML 2.0 - http://cpp0x.pl" );
     applicationWindow.setFramerateLimit(200);
 
     //Setting avatar
@@ -21,10 +21,11 @@ int main()
     //Intersection(int x, int y, bool nOK, bool sOK, bool eOK, bool wOK);
     // Setting Intersections
     Intersections intersectionsTab;
-    intersectionsTab.AddIntersection(1, 100, 0, 0, 1, 0);
+    /*intersectionsTab.AddIntersection(1, 100, 0, 0, 1, 0);
     intersectionsTab.AddIntersection(100, 1, 0, 1, 0, 1);
-    intersectionsTab.AddIntersection(100, 100, 1, 0, 0, 1);
-
+    intersectionsTab.AddIntersection(100, 100, 1, 0, 0, 1);*/
+    intersectionsTab.Map1();
+    avatar1.SetPosition(50,250);
 
 
 

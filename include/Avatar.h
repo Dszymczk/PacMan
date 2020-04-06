@@ -12,7 +12,7 @@
 
 class Avatar : public Character
 {
-    static const int windowHeight = 600;
+    static const int windowHeight = 800;
     static const int WindowWidth = 800;
     // zmienna opisuj¹ca stan avatara. Normalny, lub ulepszony po zdobyciu powerupu
 	std::string state;

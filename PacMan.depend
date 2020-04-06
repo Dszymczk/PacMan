@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1586200964 source:d:\programowanie\cpp\pacman\main.cpp
+1586203718 source:d:\programowanie\cpp\pacman\main.cpp
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<iostream>
@@ -435,7 +435,7 @@
 1586110707 source:d:\programowanie\cpp\pacman\src\avatar.cpp
 	"Avatar.h"
 
-1586110635 d:\programowanie\cpp\pacman\include\avatar.h
+1586203793 d:\programowanie\cpp\pacman\include\avatar.h
 	<vector>
 	"Character.h"
 	<string>
@@ -454,7 +454,7 @@
 	<iostream>
 	<Avatar.h>
 
-1586104387 d:\programowanie\cpp\pacman\include\intersections.h
+1586203584 d:\programowanie\cpp\pacman\include\intersections.h
 	<vector>
 	<iostream>
 	"Intersection.h"
@@ -463,9 +463,9 @@
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 
-1586201142 source:d:\programowanie\cpp\pacman\src\intersection.cpp
+1586202224 source:d:\programowanie\cpp\pacman\src\intersection.cpp
 	"Intersection.h"
 
-1586104538 source:d:\programowanie\cpp\pacman\src\intersections.cpp
+1586203584 source:d:\programowanie\cpp\pacman\src\intersections.cpp
 	"Intersections.h"
 
