@@ -18,10 +18,39 @@ Intersection::~Intersection()
 
 void Intersection::DrawIntersection(sf::RenderWindow &appWindow)
 {
-    sf::CircleShape shape(30, 4);
+    int dimension = 30;
+    sf::CircleShape shape(dimension, 4);
     shape.setFillColor(sf::Color(100, 250, 50));
     shape.setPosition(Intersection::position.x, Intersection::position.y);
     appWindow.draw(shape);
+    if(!Intersection::nOK == 1)
+    {
+        sf::CircleShape shapeN(dimension/3, 4);
+        shapeN.setFillColor(sf::Color(250, 0, 0));
+        shapeN.setPosition(Intersection::position.x + int(dimension / 2 * 1.42), Intersection::position.y-dimension/3);
+        appWindow.draw(shapeN);
+    }
+    if(!Intersection::sOK == 1)
+    {
+        sf::CircleShape shapeN(dimension/3, 4);
+        shapeN.setFillColor(sf::Color(250, 0, 0));
+        shapeN.setPosition(Intersection::position.x + int(dimension / 2 * 1.42), Intersection::position.y+dimension*1.41+dimension/4);
+        appWindow.draw(shapeN);
+    }
+    if(! Intersection::wOK == 1)
+    {
+        sf::CircleShape shapeN(dimension/3, 4);
+        shapeN.setFillColor(sf::Color(250, 0, 0));
+        shapeN.setPosition(Intersection::position.x - dimension/3, Intersection::position.y + dimension*1.41/2);
+        appWindow.draw(shapeN);
+    }
+    if(!Intersection::eOK == 1)
+    {
+        sf::CircleShape shapeN(dimension/3, 4);
+        shapeN.setFillColor(sf::Color(250, 0, 0));
+        shapeN.setPosition(Intersection::position.x +1.41* dimension + dimension/3, Intersection::position.y  + dimension*1.41/2);
+        appWindow.draw(shapeN);
+    }
 }
 
 sf::Vector2f Intersection::GetPosition()

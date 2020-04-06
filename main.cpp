@@ -25,8 +25,7 @@ int main()
     intersectionsTab.AddIntersection(100, 1, 0, 1, 0, 1);
     intersectionsTab.AddIntersection(100, 100, 1, 0, 0, 1);
 
-    //Intersection intersection(10, 100, 0, 1, 0, 0);
-    //intersection.DrawIntersection(applicationWindow);
+
 
 
     // Setting event handler
@@ -37,30 +36,6 @@ int main()
     {
         event.HandleEvents();
         avatar1.IntersectionAction(intersectionsTab);
-        /*
-        if( avatar1.DetectIntersection(intersectionsTab) >= 0)
-        {
-            // Intersection detected
-            std::cout<<"Intersection Detected. Checking!" <<std::endl;
-            int intersectionId = avatar1.DetectIntersection(intersectionsTab);
-            if( intersectionsTab.tab[intersectionId].CheckDirection(avatar1.GetDirectionBuffer()))
-            {
-                // If bufferDirection is ok then change direction
-                std::cout<<"Change direction"<<std::endl;
-                avatar1.ChangeDirection(avatar1.GetDirectionBuffer());
-                avatar1.ResetDirectionBuffer();
-            }else if ( intersectionsTab.tab[intersectionId].CheckDirection(avatar1.GetDirection()))
-            {
-                // If buffer direction is not ok, but current direction is ok
-                std::cout<<"can go further" <<std::endl;
-
-            }else
-            {
-                std::cout<<"stop avatar"<<std::endl;
-                avatar1.Stop();
-            }
-
-        }*/
         avatar1.Move();
 
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1586110784 source:d:\programowanie\cpp\pacman\main.cpp
+1586200964 source:d:\programowanie\cpp\pacman\main.cpp
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 	<iostream>
@@ -459,11 +459,11 @@
 	<iostream>
 	"Intersection.h"
 
-1586107574 d:\programowanie\cpp\pacman\include\intersection.h
+1586200964 d:\programowanie\cpp\pacman\include\intersection.h
 	<SFML/Window.hpp>
 	<SFML/Graphics.hpp>
 
-1586107553 source:d:\programowanie\cpp\pacman\src\intersection.cpp
+1586201142 source:d:\programowanie\cpp\pacman\src\intersection.cpp
 	"Intersection.h"
 
 1586104538 source:d:\programowanie\cpp\pacman\src\intersections.cpp
